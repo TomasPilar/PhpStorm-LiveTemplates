@@ -1,0 +1,18 @@
+<templateSet group="TomasPilaru PHP">
+  <template name="pri" value="$PHPDOC$&#10;private function $NAME$($ARGS$)&#10;{&#10;    $END$&#10;}" description="private function" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ARGS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PHPDOC" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="try" value="try {&#10;&#9;$TRYCODE$&#10;&#10;} catch ($EXCEPTION_TYPE$ $exception) {&#10;&#9;$ENDS$&#10;}&#10;" description="try/catch" toReformat="false" toShortenFQNames="true">
+    <variable name="EXCEPTION_TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TRYCODE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ENDS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+</templateSet>

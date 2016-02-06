@@ -1,0 +1,19 @@
+<templateSet group="TomasPilaru Nette Forms">
+  <template name="enform" value="/**&#10; * @return $FORM_CLASS$&#10; */&#10;protected function createComponent$NAME$()&#10;{&#10;&#9;$$form = $this-&gt;entityFormFactory$FACTORY$-&gt;create($ENTITY$);&#10;&#9;&#10;&#9;$form-&gt;$END$&#10;&#9;&#10;    $$form-&gt;addSubmit('send', 'Odeslat');&#10;    &#10;&#9;return $$form;&#10;}" description="entity form factory" toReformat="false" toShortenFQNames="true">
+    <variable name="FORM_CLASS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FACTORY" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ENTITY" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="form" value="/**&#10; * @return $FORM_CLASS$&#10; */&#10;protected function createComponent$NAME$()&#10;{&#10;&#9;$$form = $this-&gt;formFactory$FACTORY$-&gt;create();&#10;&#9;&#10;&#9;$form-&gt;$END$&#10;&#9;&#10;    $$form-&gt;addSubmit('send', 'Odeslat');&#10;    &#10;&#9;return $$form;&#10;}" description="Form template" toReformat="false" toShortenFQNames="true">
+    <variable name="FORM_CLASS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FACTORY" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+</templateSet>

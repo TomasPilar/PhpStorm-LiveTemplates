@@ -1,0 +1,80 @@
+<templateSet group="TomasPilaru Doctrine">
+  <template name="col" value="/**&#10; * @ORM\Column(type=&quot;$TYPE$&quot;)&#10; * @var $TYPE$$FIX$&#10; */&#10;private $$$PROPERTY$;$END$" description="column property" toReformat="false" toShortenFQNames="true">
+    <variable name="PROPERTY" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FIX" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="en" value="use Doctrine\ORM\Mapping as ORM;&#10;&#10;&#10;/**&#10; * @ORM\Entity&#10; * @ORM\Table(name=&quot;$TABLE_NAME$&quot;)&#10; */&#10;class $ENTITY$&#10;{&#10;&#9;&#10;&#9;$END$&#10;&#9;&#10;}&#10;" description="Entity" toReformat="false" toShortenFQNames="true">
+    <variable name="TABLE_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ENTITY" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="mtm" value="/**&#10; * @ORM\ManyToMany(targetEntity=&quot;$TYPE$&quot;, $COMPLETE$=&quot;$INVERSE_PROPERTY$&quot;$END$, cascade={&quot;persist&quot;})&#10; * @ORM\JoinTable(name=&quot;$TABLE_NAME$&quot;,&#10; * &#9;&#9;joinColumns={@ORM\JoinColumn(name=&quot;$JOIN_COL$_id&quot;, referencedColumnName=&quot;id&quot;)},&#10; * &#9;&#9;inverseJoinColumns={@ORM\JoinColumn(name=&quot;$INVERSE_COL$_id&quot;, referencedColumnName=&quot;id&quot;)} &#10; * &#9;)&#10; * @var $TYPE$[]|\Doctrine\Common\Collections\ArrayCollection&#10; */&#10;private $$$PROPERTY$;" description="ManyToMany relation" toReformat="false" toShortenFQNames="true">
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="COMPLETE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="INVERSE_PROPERTY" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TABLE_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="JOIN_COL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="INVERSE_COL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PROPERTY" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="mto" value="/**&#10; * @ORM\ManyToOne(targetEntity=&quot;$TYPE$&quot;, inversedBy=&quot;$OTHER_PROPERTY$&quot;$END$, cascade={&quot;persist&quot;})&#10; * @ORM\JoinColumn(name=&quot;$COL$_id&quot;, referencedColumnName=&quot;id&quot;)&#10; * @var $TYPE$&#10; */&#10;private $$$PROPERTY$;" description="ManyToOne relation" toReformat="false" toShortenFQNames="true">
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="OTHER_PROPERTY" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="COL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PROPERTY" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="otm" value="/**&#10; * @ORM\OneToMany(targetEntity=&quot;$TYPE$&quot;, mappedBy=&quot;$OTHER_PROPERTY$&quot;$END$, cascade={&quot;persist&quot;})&#10; * @var $TYPE$[]|ArrayCollection&#10; */&#10;private $$$PROPERTY$;" description="OneToMany relation" toReformat="false" toShortenFQNames="true">
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="OTHER_PROPERTY" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PROPERTY" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="oto" value="/**&#10; * @ORM\OneToOne(targetEntity=&quot;$TYPE$&quot;, $COMPLETE$=&quot;$INVERSE_PROPERTY$&quot;$END$, cascade={&quot;persist&quot;})&#10; * @ORM\JoinColumn(name=&quot;$PROPERTY$_id&quot;, referencedColumnName=&quot;id&quot;)&#10; * @var $TYPE$&#10; */&#10;private $$$PROPERTY$;" description="OneToOne relation" toReformat="false" toShortenFQNames="true">
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="COMPLETE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="INVERSE_PROPERTY" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PROPERTY" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="repo" value="implements $ENTITYNAME$RepositoryInterface&#10;{&#10;&#10;&#9;/**&#10;&#9; * @var EntityManagerInterface$ENTITYMANAGER$&#10;&#9; */&#10;&#9;private $entityManager;&#10;&#10;&#10;&#9;public function __construct(EntityManagerInterface $entityManager)&#10;&#9;{&#10;&#9;&#9;$this-&gt;entityManager = $entityManager;&#10;&#9;}&#10;&#10;&#10;&#9;/**&#10;&#9; * {@inheritdoc}&#10;&#9; */&#10;&#9;public function save($ENTITYCLASS$ $ENTITY$)&#10;&#9;{&#10;&#9;&#9;$this-&gt;entityManager-&gt;persist($ENTITY$);&#10;&#9;&#9;$this-&gt;entityManager-&gt;flush();&#10;&#9;}&#10;&#10;&#10;&#9;/**&#10;&#9; * {@inheritdoc}&#10;&#9; */&#10;&#9;public function delete($ENTITYCLASS$ $ENTITY$)&#10;&#9;{&#10;&#9;&#9;$this-&gt;entityManager-&gt;remove($ENTITY$);&#10;&#9;&#9;$this-&gt;entityManager-&gt;flush();&#10;&#9;}$END$&#10;&#10;}&#10;" description="EntityRepository" toReformat="false" toShortenFQNames="true">
+    <variable name="ENTITYNAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ENTITYMANAGER" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ENTITYCLASS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ENTITY" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="irepo" value="&#10;&#9;function save($ENTITYCLASS$ $ENTITY$);&#10;&#10;&#10;&#9;function delete($ENTITYCLASS$ $ENTITY$);$END$&#10;" description="Entity repository interface" toReformat="false" toShortenFQNames="true">
+    <variable name="ENTITYCLASS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ENTITY" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="mtmar" value="public function add$ENTITY$($ENTITY$ $PROPERTY$)&#10;{&#10;&#9;if ($this-&gt;$RELATION$-&gt;contains($PROPERTY$)) {&#10;&#9;&#9;return;&#10;&#9;}&#10;&#10;&#9;$this-&gt;$RELATION$-&gt;add($PROPERTY$);&#10;&#9;$PROPERTY$-&gt;add$THISENTITY$($this);&#10;}&#10;&#10;&#10;public function remove$ENTITY$($ENTITY$ $PROPERTY$)&#10;{&#10;&#9;if ( ! $this-&gt;$RELATION$-&gt;contains($PROPERTY$)) {&#10;&#9;&#9;return;&#10;&#9;}&#10;&#10;&#9;$this-&gt;$RELATION$-&gt;removeElement($PROPERTY$);&#10;&#9;$PROPERTY$-&gt;remove$THISENTITY$($this);&#10;}$END$" description="ManyToMany relation adder / remover" toReformat="false" toShortenFQNames="true">
+    <variable name="ENTITY" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PROPERTY" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="RELATION" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="THISENTITY" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+</templateSet>
