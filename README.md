@@ -9,6 +9,6 @@ Find your PhpStorm configuration folder:
     Windows: <your home directory>\.WebIde<version>\config
     MacOS: ~/Library/Preferences/WebIde<version>
 
-There is a `templates/` directory. This directory contains XML files with Live Templates.
+There is a `templates/` directory, which contains XML files with Live Templates. Copy XML files from this package into this directory.
 
 Restart PhpStorm IDE and profit!
