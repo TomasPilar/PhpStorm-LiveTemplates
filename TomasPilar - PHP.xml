@@ -1,4 +1,4 @@
-<templateSet group="TomasPilaru PHP">
+<templateSet group="TomasPilar - PHP">
   <template name="pri" value="$PHPDOC$&#10;private function $NAME$($ARGS$)&#10;{&#10;    $END$&#10;}" description="private function" toReformat="false" toShortenFQNames="true">
     <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="ARGS" expression="" defaultValue="" alwaysStopAt="true" />

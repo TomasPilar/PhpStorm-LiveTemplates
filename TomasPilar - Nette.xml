@@ -1,4 +1,4 @@
-<templateSet group="TomasPilaru Nette">
+<templateSet group="TomasPilar - Nette">
   <template name="com" value="/**&#10; * @return $CLASS$&#10; */&#10;protected function createComponent$NAME$()&#10;{&#10;    return new $CLASS$($ARGS$);$END$&#10;}" description="component factory" toReformat="false" toShortenFQNames="true">
     <variable name="CLASS" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />

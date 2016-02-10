@@ -1,4 +1,4 @@
-<templateSet group="TomasPilaru Doctrine">
+<templateSet group="TomasPilar - Doctrine">
   <template name="col" value="/**&#10; * @ORM\Column(type=&quot;$TYPE$&quot;)&#10; * @var $TYPE$$FIX$&#10; */&#10;private $$$PROPERTY$;$END$" description="column property" toReformat="false" toShortenFQNames="true">
     <variable name="PROPERTY" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
