@@ -13,7 +13,7 @@
       <option name="PHP" value="true" />
     </context>
   </template>
-  <template name="fac" value="/**&#10; * @return $FACTORY$&#10; */&#10;protected function createComponent$NAME$($FACTORY$Factory$NAMESPACE$ $$factory)&#10;{&#10;&#9;return $$factory-&gt;create($ARGS$);$END$&#10;}" description="factory component create" toReformat="false" toShortenFQNames="true">
+  <template name="fac" value="/**&#10; * @return $FACTORY$&#10; */&#10;protected function createComponent$FACTORY$$NAME$($FACTORY$Factory$NAMESPACE$ $$factory)&#10;{&#10;&#9;return $$factory-&gt;create($ARGS$);$END$&#10;}" description="factory component create" toReformat="false" toShortenFQNames="true">
     <variable name="FACTORY" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="NAMESPACE" expression="" defaultValue="" alwaysStopAt="true" />
