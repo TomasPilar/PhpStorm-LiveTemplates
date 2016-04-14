@@ -15,4 +15,19 @@
       <option name="PHP" value="true" />
     </context>
   </template>
+  <template name="fore" value="foreach ($$$VARIABLE$ as $$$VALUE$) {&#10;&#9;$END$&#10;}&#10;" description="foreach" toReformat="false" toShortenFQNames="true">
+    <variable name="VARIABLE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="forek" value="foreach ($$$VARIABLE$ as $$$KEY$ =&gt; $$$VALUE$) {&#10;&#9;$END$&#10;}&#10;" description="foreach with key =&gt; value" toReformat="false" toShortenFQNames="true">
+    <variable name="VARIABLE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="KEY" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
 </templateSet>
